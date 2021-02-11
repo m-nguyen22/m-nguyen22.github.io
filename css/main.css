@@ -1,32 +1,84 @@
 body {
+    height:100vh;
+    width:100vw;
     background-color: #17202f;
     margin: 0px;
-    /*height:100%;*/
+    overflow:hidden;
 }
 
-nav{
+nav {
     position: fixed;
-    width: 100px;
-    height: 100%;
+    width: 50vw;
+    height: 100vh;
     background-color: #35a0ba;
+    left: -38vw;
+    transition-timing-function: cubic-bezier(.3,1.15,.79,.94);
+    transition: all .65s;
+    transform: translateX(0px);
+    z-index:3;
+}
+
+.open {
+    transform: translateX(38vw);
 }
 
 #navbutton{
-    width:70px;
-    height:70px;
-    border:5px solid #152b20;
+    position:absolute;
+    width:8vw;
+    height:8vw;
+    border:0.2vw solid #152b20;
     display:block;
-    margin:10px 10px 10px 10px;
+    margin:2vw 2vw 2vw 2vw;
+    right:0;
 }
-
 #navbutton:hover {
 
 }
 
+#bg {
+    position: absolute;
+    top: calc(-70px - 10vh);
+    left: calc(-400px - 40vw - 5vh);
+    z-index: -1;
+    font-size: 500%;
+    width: 170vw;
+    height: 400vh;
+    padding-left: 14vw;
+    padding-top: 2vw;
+    color: #aaaaaf;
+    transform: skew(-25deg, 10deg);
+    user-select: none;
+}
 @media screen and (max-width: 800px) {
+    #navbutton {
+        width: 8vh;
+        height: 8vh;
+        bottom: 0;
+        margin:2vh 2vh 2vh 2vh;
+    }
+
     nav {
         position: fixed;
-        height:100px;
-        width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+        height: 100vh;
+        width: 100vw; /* The width is 100%, when the viewport is 800px or smaller */
+        left: 0;
+        top: -88vh;
+        transform: translateY(0vh);
+    }
+    .open {
+        transform: translateY(88vh);
     }
 }
+
+/*TRASHED BELOW*/
+
+/*
+#bg{
+    position:absolute;
+    width:700px;
+    height:100vh;
+    left:900px;
+    top:0;
+    background-color: white;
+    z-index:-1;
+}*/
